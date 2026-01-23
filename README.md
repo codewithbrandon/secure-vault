@@ -20,4 +20,5 @@ This vault implements a **Defense-in-Depth** strategy:
 1.  **Local Read:** The file is read into an `ArrayBuffer` locally.
 2.  **Key Derivation:** The user's password is combined with a random salt to derive a 256-bit key.
 3.  **Encryption:** Data is encrypted locally; the browser outputs a secure package containing the `[Salt + IV + Ciphertext]`.
-4.  **Zero Leakage:** No raw data or passwords are ever transmitted to a server.
+4.  **Zero Leakage:** No raw data or passwords are ever transmitted to a server. 
+[🚀 Live Demo: Secure Vault](https://codewithbrandon.github.io/secure-vault/)
