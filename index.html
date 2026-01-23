@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <title>Secure Vault - Client-Side Encryption</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>🔐 Secure Vault</h1>
+                <p class="subtitle">AES-256-GCM Client-Side Encryption</p>
+            </div>
+            <div class="security-badge">
+                <span class="badge-icon">🛡️</span>
+                <span class="badge-text">Security+</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Security Status Panel -->
+            <div class="status-panel" id="statusPanel">
+                <div class="status-item">
+                    <span class="status-label">Encryption:</span>
+                    <span class="status-value" id="encryptionStatus">Standby</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Key Strength:</span>
+                    <span class="status-value" id="keyStrength">N/A</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">File Validation:</span>
+                    <span class="status-value" id="validationStatus">Pending</span>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <h2>File Upload & Encryption</h2>
+                
+                <div class="form-group">
+                    <label for="fileInput">Select File (Max 5MB)</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="fileInput" accept=".txt,.pdf,.jpg,.jpeg,.png,.doc,.docx" />
+                        <div class="file-info" id="fileInfo">No file selected</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordInput">Encryption Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="passwordInput" placeholder="Enter strong password (min 12 chars)" />
+                        <button type="button" class="toggle-password" id="togglePassword">👁️</button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPasswordInput">Confirm Password</label>
+                    <input type="password" id="confirmPasswordInput" placeholder="Re-enter password" />
+                </div>
+
+                <button class="btn-primary" id="encryptBtn" disabled>
+                    <span class="btn-icon">🔒</span>
+                    Encrypt File
+                </button>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Encryption Results</h2>
+                
+                <div class="result-card">
+                    <h3>Encryption Metadata</h3>
+                    <div class="metadata-grid">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Algorithm:</span>
+                            <span class="metadata-value" id="algorithm">AES-GCM-256</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">IV Length:</span>
+                            <span class="metadata-value" id="ivLength">12 bytes</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Salt Length:</span>
+                            <span class="metadata-value" id="saltLength">16 bytes</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">PBKDF2 Iterations:</span>
+                            <span class="metadata-value" id="iterations">100,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Encrypted Data Preview</h3>
+                    <textarea class="encrypted-output" id="encryptedOutput" readonly></textarea>
+                    <button class="btn-secondary" id="downloadBtn">
+                        <span class="btn-icon">⬇️</span>
+                        Download Encrypted File
+                    </button>
+                </div>
+
+                <button class="btn-reset" id="resetBtn">Reset Vault</button>
+            </section>
+
+            <!-- Security Log -->
+            <section class="log-section">
+                <h3>Security Audit Log</h3>
+                <div class="log-container" id="logContainer"></div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>🔐 All encryption occurs client-side. No data leaves your browser.</p>
+            <p class="footer-note">Built with Web Crypto API (NIST SP 800-38D compliant)</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
