@@ -23,7 +23,7 @@ This project demonstrates professional-grade client-side encryption capabilities
 Example below.
 
 *Ref 1: Cryptographic Architecture*
-<img src="vault/ref1.png" />
+<img src="svref2.png" />
 
 - The vault implements AES-256-GCM authenticated encryption which provides both confidentiality (data cannot be read) and integrity (data cannot be tampered with).
 - PBKDF2 key derivation stretches user passwords through 100,000 hashing iterations, making brute-force attacks computationally infeasible.
@@ -66,4 +66,5 @@ Example below.
 This hands-on project successfully demonstrated professional-grade cryptographic implementation using native browser APIs. By following NIST standards for AES-256-GCM encryption and implementing PBKDF2 key derivation with 100,000 iterations, the vault achieves strong security guarantees. The defense-in-depth approach, combining cryptographic controls with frontend hardening (CSP, input sanitization, MIME validation), provides multiple layers of protection. Most importantly, the zero-knowledge architecture ensures complete user privacy by performing all cryptographic operations client-side, with no data or passwords ever transmitted to external servers.
 
 [🚀 Live Demo: Secure Vault](https://codewithbrandon.github.io/secure-vault/)
+
 
