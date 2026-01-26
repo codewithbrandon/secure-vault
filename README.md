@@ -45,7 +45,7 @@ Example below.
 - Data is encrypted locally within the browser, producing a secure package containing the salt, initialization vector (IV), and ciphertext.
 - No raw data or passwords are ever transmitted to external servers, ensuring complete user privacy.
 
-*Ref 4: Security Validation & Zero-Leakage Architecture*
+* Security Validation & Zero-Leakage Architecture*
 
 - Network analysis confirms zero server communication during encryption operations, validating the zero-knowledge claim.
 - All cryptographic operations occur client-side, meaning the vault has no knowledge of user passwords or file contents.
