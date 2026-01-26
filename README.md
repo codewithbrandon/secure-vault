@@ -37,7 +37,7 @@ Example below.
 - MIME validation implements strict file type whitelisting to prevent malicious script uploads disguised as legitimate files.
 
 *Ref 3: Encryption Workflow*
-<img src="vault/ref3.png" />
+<img src="svref4.png" />
 
 - Files are read locally into an ArrayBuffer without any network transmission, maintaining zero-knowledge architecture.
 - The user's password is combined with a cryptographically random salt to derive a 256-bit encryption key using PBKDF2.
@@ -45,7 +45,7 @@ Example below.
 - No raw data or passwords are ever transmitted to external servers, ensuring complete user privacy.
 
 *Ref 4: Security Validation & Zero-Leakage Architecture*
-<img src="vault/ref4.png" />
+
 
 - Network analysis confirms zero server communication during encryption operations, validating the zero-knowledge claim.
 - All cryptographic operations occur client-side, meaning the vault has no knowledge of user passwords or file contents.
@@ -54,7 +54,7 @@ Example below.
 
 # Mitigation and Best Practices
 
-<img src="vault/ref5.png" />
+
 
 - Strong Password Requirements: Implement minimum password complexity requirements (length, character variety) to ensure adequate key strength.
 - Secure Key Storage: Never store encryption keys in browser localStorage or sessionStorage; keys should only exist in memory during active sessions.
@@ -66,6 +66,7 @@ Example below.
 This hands-on project successfully demonstrated professional-grade cryptographic implementation using native browser APIs. By following NIST standards for AES-256-GCM encryption and implementing PBKDF2 key derivation with 100,000 iterations, the vault achieves strong security guarantees. The defense-in-depth approach, combining cryptographic controls with frontend hardening (CSP, input sanitization, MIME validation), provides multiple layers of protection. Most importantly, the zero-knowledge architecture ensures complete user privacy by performing all cryptographic operations client-side, with no data or passwords ever transmitted to external servers.
 
 [🚀 Live Demo: Secure Vault](https://codewithbrandon.github.io/secure-vault/)
+
 
 
 
