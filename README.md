@@ -30,7 +30,7 @@ Example below.
 - High-entropy random values are generated using window.crypto.getRandomValues for salts (16-byte) and initialization vectors (12-byte), ensuring unique encryption for each operation.
 
 *Ref 2: Frontend Hardening Implementation*
-<img src="vault/ref2.png" />
+<img src="svref3.png" />
 
 - Strict Content Security Policy (CSP) is configured via meta-header to block unauthorized inline scripts and prevent third-party resource loading.
 - Privacy-first input attributes prevent sensitive encryption keys from being cached by browsers or transmitted to cloud spellcheck services.
@@ -66,5 +66,6 @@ Example below.
 This hands-on project successfully demonstrated professional-grade cryptographic implementation using native browser APIs. By following NIST standards for AES-256-GCM encryption and implementing PBKDF2 key derivation with 100,000 iterations, the vault achieves strong security guarantees. The defense-in-depth approach, combining cryptographic controls with frontend hardening (CSP, input sanitization, MIME validation), provides multiple layers of protection. Most importantly, the zero-knowledge architecture ensures complete user privacy by performing all cryptographic operations client-side, with no data or passwords ever transmitted to external servers.
 
 [🚀 Live Demo: Secure Vault](https://codewithbrandon.github.io/secure-vault/)
+
 
 
